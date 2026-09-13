@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Construcción de Interfaz con Eventos</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background: #f0f2f5;
+        color: #1a1a2e;
+        min-height: 100vh;
+        padding: 2rem;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 1.6rem;
+        font-weight: 600;
+        margin-bottom: 0.4rem;
+        color: #1a1a2e;
+      }
+
+      .subtitle {
+        text-align: center;
+        font-size: 0.95rem;
+        color: #555;
+        margin-bottom: 2.5rem;
+      }
+
+      .exercises {
+        max-width: 860px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      .card {
+        background: #fff;
+        border-radius: 12px;
+        padding: 2rem;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+        border: 1px solid #e4e7ec;
+      }
+
+      .card h2 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 0.3rem;
+        color: #003366;
+      }
+
+      .card p.desc {
+        font-size: 0.88rem;
+        color: #666;
+        margin-bottom: 1.4rem;
+        line-height: 1.5;
+      }
+
+      .demo-area {
+        background: #f8f9fb;
+        border: 1px dashed #cfd5de;
+        border-radius: 8px;
+        padding: 1.5rem;
+        position: relative;
+        min-height: 120px;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      button.action-btn {
+        font-family: "Inter", sans-serif;
+        font-size: 0.9rem;
+        font-weight: 500;
+        padding: 0.6rem 1.4rem;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        background: #003366;
+        color: #fff;
+        transition:
+          background 0.2s,
+          transform 0.1s;
+      }
+
+      button.action-btn:hover {
+        background: #004a8f;
+      }
+
+      button.action-btn:active {
+        transform: scale(0.97);
+      }
+
+      input.text-field {
+        font-family: "Inter", sans-serif;
+        font-size: 0.9rem;
+        padding: 0.55rem 0.8rem;
+        border: 1.5px solid #cfd5de;
+        border-radius: 6px;
+        outline: none;
+        width: 160px;
+        transition: border-color 0.2s;
+      }
+
+      input.text-field:focus {
+        border-color: #003366;
+      }
+
+      input.text-field[readonly] {
+        background: #eef1f6;
+        color: #333;
+      }
+
+      .label {
+        font-size: 0.8rem;
+        color: #777;
+        display: block;
+        margin-bottom: 0.3rem;
+      }
+
+      .input-group {
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Ejercicio 1: botón que se mueve */
+      #moveArea {
+        position: relative;
+        min-height: 140px;
+        justify-content: center;
+      }
+
+      #btnMove {
+        position: absolute;
+        transition:
+          left 0.35s ease,
+          top 0.35s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Construcción de Interfaz con Eventos</h1>
+    <p class="subtitle">
+      Ejercicios del anexo — Diseño de Interfaces, UNIMINUTO
+    </p>
+
+    <div class="exercises">
+      <!-- ============================================= -->
+      <!-- EJERCICIO 1: Botón que cambia de posición      -->
+      <!-- ============================================= -->
+      <div class="card">
+        <h2>Ejercicio 1 — Botón que cambia de posición</h2>
+        <p class="desc">
+          Se crea un botón con un evento clic (ActionPerformed). Cada vez que se
+          presiona, el botón se mueve a una posición aleatoria dentro del área,
+          simulando el uso de <code>setBounds</code> en Java Swing.
+        </p>
+        <div class="demo-area" id="moveArea">
+          <button class="action-btn" id="btnMove">
+            ¡Haz clic para moverme!
+          </button>
+        </div>
+      </div>
+
+      <!-- ============================================= -->
+      <!-- EJERCICIO 2: TextField + botón cerca           -->
+      <!-- ============================================= -->
+      <div class="card">
+        <h2>Ejercicio 2 — TextField junto al botón</h2>
+        <p class="desc">
+          Se crea un campo de texto (equivalente a un TextField de AWT) y se
+          coloca cerca del botón. Al hacer clic, se muestra en una alerta el
+          texto ingresado.
+        </p>
+        <div class="demo-area">
+          <div class="input-group">
+            <span class="label">Escribe algo:</span>
+            <input
+              type="text"
+              class="text-field"
+              id="inputTexto"
+              placeholder="Texto aquí…"
+            />
+          </div>
+          <button class="action-btn" id="btnMostrar">Mostrar texto</button>
+        </div>
+      </div>
+
+      <!-- ============================================= -->
+      <!-- EJERCICIO 3: Raíz cuadrada                     -->
+      <!-- ============================================= -->
+      <div class="card">
+        <h2>Ejercicio 3 — Calcular la raíz cuadrada</h2>
+        <p class="desc">
+          El usuario ingresa un número en el primer campo. Al presionar el botón
+          se calcula la raíz cuadrada y el resultado se muestra en el segundo
+          campo de texto.
+        </p>
+        <div class="demo-area">
+          <div class="input-group">
+            <span class="label">Número:</span>
+            <input
+              type="text"
+              class="text-field"
+              id="inputNumero"
+              placeholder="Ej: 25"
+            />
+          </div>
+          <button class="action-btn" id="btnRaiz">Calcular √</button>
+          <div class="input-group">
+            <span class="label">Resultado:</span>
+            <input
+              type="text"
+              class="text-field"
+              id="outputRaiz"
+              readonly
+              placeholder="—"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================================= -->
+      <!-- EJERCICIO 4: Contador de pulsaciones           -->
+      <!-- ============================================= -->
+      <div class="card">
+        <h2>Ejercicio 4 — Contador de pulsaciones</h2>
+        <p class="desc">
+          Un botón con evento clic lleva la cuenta de cuántas veces ha sido
+          presionado. El contador se muestra en un campo de texto.
+        </p>
+        <div class="demo-area">
+          <button class="action-btn" id="btnContador">Pulsar</button>
+          <div class="input-group">
+            <span class="label">Pulsaciones:</span>
+            <input
+              type="text"
+              class="text-field"
+              id="outputContador"
+              readonly
+              value="0"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================================================ -->
+    <!-- SCRIPTS — Manejo de eventos (ActionPerformed)    -->
+    <!-- ================================================ -->
+    <script>
+      // -----------------------------------------------
+      // Ejercicio 1: Botón que cambia de posición
+      // Se usa addEventListener para asignar el evento
+      // clic, equivalente a ActionListener en Java.
+      // -----------------------------------------------
+      const btnMove = document.getElementById("btnMove");
+      const moveArea = document.getElementById("moveArea");
+
+      btnMove.addEventListener("click", function () {
+        const areaW = moveArea.offsetWidth - btnMove.offsetWidth;
+        const areaH = moveArea.offsetHeight - btnMove.offsetHeight;
+        const newX = Math.floor(Math.random() * areaW);
+        const newY = Math.floor(Math.random() * areaH);
+        // Equivalente a setBounds(x, y, ancho, alto) en Java Swing
+        btnMove.style.left = newX + "px";
+        btnMove.style.top = newY + "px";
+      });
+
+      // -----------------------------------------------
+      // Ejercicio 2: Mostrar texto del TextField
+      // Se lee el valor del campo con .value
+      // (equivalente a getText() en Java Swing).
+      // -----------------------------------------------
+      const btnMostrar = document.getElementById("btnMostrar");
+      const inputTexto = document.getElementById("inputTexto");
+
+      btnMostrar.addEventListener("click", function () {
+        const texto = inputTexto.value;
+        if (texto.trim() === "") {
+          alert("El campo está vacío. Escribe algo primero.");
+        } else {
+          alert("Texto ingresado: " + texto);
+        }
+      });
+
+      // -----------------------------------------------
+      // Ejercicio 3: Raíz cuadrada
+      // Se toma el número del primer campo, se calcula
+      // Math.sqrt() y se pone en el segundo campo.
+      // -----------------------------------------------
+      const btnRaiz = document.getElementById("btnRaiz");
+      const inputNumero = document.getElementById("inputNumero");
+      const outputRaiz = document.getElementById("outputRaiz");
+
+      btnRaiz.addEventListener("click", function () {
+        const valor = parseFloat(inputNumero.value);
+        if (isNaN(valor)) {
+          outputRaiz.value = "No es un número";
+        } else if (valor < 0) {
+          outputRaiz.value = "No se puede (negativo)";
+        } else {
+          outputRaiz.value = Math.sqrt(valor).toFixed(4);
+        }
+      });
+
+      // -----------------------------------------------
+      // Ejercicio 4: Contador de pulsaciones
+      // Cada clic incrementa la variable y actualiza
+      // el campo de texto.
+      // -----------------------------------------------
+      let contador = 0;
+      const btnContador = document.getElementById("btnContador");
+      const outputContador = document.getElementById("outputContador");
+
+      btnContador.addEventListener("click", function () {
+        contador++;
+        outputContador.value = contador;
+      });
+    </script>
+  </body>
+</html>
