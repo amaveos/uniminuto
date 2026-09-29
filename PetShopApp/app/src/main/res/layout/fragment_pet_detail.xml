@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Imagen principal de la mascota -->
+        <ImageView
+            android:id="@+id/imgPetDetail"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:scaleType="centerCrop"
+            android:contentDescription="Imagen de la mascota" />
+
+        <TextView
+            android:id="@+id/txtPetDetailName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp" />
+
+        <TextView
+            android:id="@+id/txtPetDetailBreed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#666666"
+            android:layout_marginTop="4dp" />
+
+        <TextView
+            android:id="@+id/txtPetDetailAge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="#999999"
+            android:layout_marginTop="2dp" />
+
+        <TextView
+            android:id="@+id/txtPetDetailDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:layout_marginTop="12dp"
+            android:lineSpacingMultiplier="1.3" />
+
+        <!-- Reproductor de video con VideoView -->
+        <VideoView
+            android:id="@+id/videoViewPet"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="16dp"
+            android:visibility="gone" />
+
+        <!-- Botón para reproducir audio descriptivo -->
+        <Button
+            android:id="@+id/btnPlayAudio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="▶ Escuchar cuidados"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:textColor="@color/white"
+            android:visibility="gone" />
+
+    </LinearLayout>
+</ScrollView>

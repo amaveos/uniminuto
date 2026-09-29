@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PetShop App</string>
+    <string name="nav_catalog">Catálogo</string>
+    <string name="nav_gallery">Galería</string>
+</resources>
