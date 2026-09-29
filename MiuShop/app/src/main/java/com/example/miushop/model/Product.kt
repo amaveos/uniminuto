@@ -1,4 +1,4 @@
-package com.example.petshopapp.model
+package com.example.miushop.model
 
 /**
  * Modelo de datos para un producto de la tienda de mascotas.

@@ -1,4 +1,4 @@
-package com.example.petshopapp.adapter
+package com.example.miushop.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,8 +6,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.petshopapp.R
-import com.example.petshopapp.model.Pet
+import com.example.miushop.R
+import com.example.miushop.model.Pet
 
 /**
  * Adaptador para la galería de mascotas.

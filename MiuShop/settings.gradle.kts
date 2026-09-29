@@ -13,5 +13,5 @@ dependencyResolution {
     }
 }
 
-rootProject.name = "PetShopApp"
+rootProject.name = "MiuShop"
 include(":app")

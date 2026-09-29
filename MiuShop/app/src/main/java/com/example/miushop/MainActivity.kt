@@ -1,14 +1,14 @@
-package com.example.petshopapp
+package com.example.miushop
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.example.petshopapp.ui.CatalogFragment
-import com.example.petshopapp.ui.GalleryFragment
+import com.example.miushop.ui.CatalogFragment
+import com.example.miushop.ui.GalleryFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 /**
- * Activity principal de la aplicación PetShop.
+ * Activity principal de la aplicación MiuShop.
  * Maneja la navegación entre las secciones de Catálogo y Galería
  * mediante un BottomNavigationView.
  */

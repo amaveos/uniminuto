@@ -1,4 +1,4 @@
-package com.example.petshopapp.ui
+package com.example.miushop.ui
 
 import android.media.MediaPlayer
 import android.net.Uri
@@ -12,7 +12,7 @@ import android.widget.TextView
 import android.widget.VideoView
 import android.widget.MediaController
 import androidx.fragment.app.Fragment
-import com.example.petshopapp.R
+import com.example.miushop.R
 
 /**
  * Fragmento de detalle de mascota con funcionalidades multimedia.
@@ -35,7 +35,7 @@ class PetDetailFragment : Fragment() {
          * Factory method para crear el fragmento con los datos de la mascota.
          * Usa Bundle para pasar argumentos de forma segura entre fragmentos.
          */
-        fun newInstance(pet: com.example.petshopapp.model.Pet): PetDetailFragment {
+        fun newInstance(pet: com.example.miushop.model.Pet): PetDetailFragment {
             val fragment = PetDetailFragment()
             val args = Bundle().apply {
                 putInt("petId", pet.id)

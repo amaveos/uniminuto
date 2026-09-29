@@ -1,4 +1,4 @@
-package com.example.petshopapp.ui
+package com.example.miushop.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,9 +8,9 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.petshopapp.R
-import com.example.petshopapp.adapter.ProductAdapter
-import com.example.petshopapp.model.Product
+import com.example.miushop.R
+import com.example.miushop.adapter.ProductAdapter
+import com.example.miushop.model.Product
 
 /**
  * Fragmento que muestra el catálogo de productos de la tienda.

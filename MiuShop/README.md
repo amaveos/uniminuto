@@ -1,4 +1,4 @@
-# PetShop App
+# MiuShop
 
 Aplicación móvil Android para una tienda de mascotas desarrollada con Kotlin y Android Studio.
 
@@ -13,9 +13,9 @@ Aplicación móvil Android para una tienda de mascotas desarrollada con Kotlin y
 ## Estructura del proyecto
 
 ```
-PetShopApp/
+MiuShop/
 ├── app/src/main/
-│   ├── java/com/example/petshopapp/
+│   ├── java/com/example/miushop/
 │   │   ├── MainActivity.kt
 │   │   ├── adapter/
 │   │   │   ├── ProductAdapter.kt

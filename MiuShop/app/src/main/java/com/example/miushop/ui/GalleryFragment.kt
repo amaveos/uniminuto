@@ -1,4 +1,4 @@
-package com.example.petshopapp.ui
+package com.example.miushop.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.petshopapp.R
-import com.example.petshopapp.adapter.PetAdapter
-import com.example.petshopapp.model.Pet
+import com.example.miushop.R
+import com.example.miushop.adapter.PetAdapter
+import com.example.miushop.model.Pet
 
 /**
  * Fragmento que muestra la galería de mascotas disponibles.

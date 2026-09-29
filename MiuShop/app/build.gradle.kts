@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.petshopapp"
+    namespace = "com.example.miushop"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.petshopapp"
+        applicationId = "com.example.miushop"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
